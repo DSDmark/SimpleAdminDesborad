@@ -1,2 +1,0 @@
-# drawingBoard
-Created with CodeSandbox
