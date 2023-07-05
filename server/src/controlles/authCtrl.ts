@@ -1,7 +1,7 @@
 import { Response, Request } from "express"
 import User, { IUser } from "../models/userModel"
 import bcrypt from "bcrypt";
-import { generateActiveToken } from "../middleware/generateToken";
+import { generateActiveToken, generateRefreshToken } from "../middleware/generateToken";
 import { validateMail } from "../middleware/validation";
 import mailSender from "../config/mail";
 import jwt from "jsonwebtoken";
@@ -25,7 +25,7 @@ const authCtrl = {
       }
 
       const active_token = generateActiveToken({ newUser })
-      const url = `${BASE_URL}/active?token=${active_token}`
+      const url = `${BASE_URL}/active/${active_token}`
 
       if (validateMail(account)) {
         mailSender(account, url, "pleace varify youseft:")
@@ -35,19 +35,6 @@ const authCtrl = {
       return res.status(200).json({ msg: "Account is created ✅" })
     } catch (err) {
       return res.status(500).json({ msg: err })
-    }
-  },
-  login: async (req: Request, res: Response) => {
-    try {
-
-      const { account, password } = req.body
-      const user = await User.findOne({ account })
-      // checking if user account exist or not in database
-      if (!user || !password) return res.status(400).json("You need to register first.")
-      checkUser(user, password, res);
-
-    } catch (err) {
-      return res.status(400).json({ msg: "Credential are not valid ❌" })
     }
   },
   accountActivation: async (req: Request, res: Response) => {
@@ -73,6 +60,21 @@ const authCtrl = {
       console.log(err)
       return res.status(500).json({ msg: err })
     }
+  },
+  login: async (req: Request, res: Response) => {
+    try {
+      const { account, password } = req.body
+      const user = await User.findOne({ account })
+      // checking if user account exist or not in database
+      if (!user || !password) return res.status(400).json("You need to register first.")
+      checkUser(user, password, res);
+
+    } catch (err) {
+      return res.status(400).json({ msg: "Credential are not valid ❌" })
+    }
+  },
+  rftVarification: async (req: Request, res: Response) => {
+
   }
 }
 
@@ -84,7 +86,8 @@ const checkUser = async (user: IUser, password: string, res: Response) => {
     return res.status(400).json({ msg: "Credential are not valid ❌" })
   }
 
-  res.json({ msg: "login successfull ✅", user: { ...user._doc, password: "" } })
+  const rf_token = generateRefreshToken({ id: user._id }, res)
+  res.json({ msg: "login successfull ✅", user: { ...user._doc, password: "", rf_token } })
 }
 
 
