@@ -1,7 +1,8 @@
 import mongoose, { Document } from "mongoose";
 
 export interface IUser extends Document {
-  name: string;
+  firstName: string;
+  lastName: string;
   account: string;
   password: string;
   location: string;
@@ -10,7 +11,7 @@ export interface IUser extends Document {
 }
 
 const userSchema = new mongoose.Schema({
-  firtName: {
+  firstName: {
     type: String,
     require: [true, "Enter your first name"],
     trim: true,
