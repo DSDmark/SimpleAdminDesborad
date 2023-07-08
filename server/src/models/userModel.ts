@@ -7,6 +7,7 @@ export interface IUser extends Document {
   password: string;
   location: string;
   avatar: string;
+  rf_token: string;
   _doc: object;
 }
 
@@ -43,6 +44,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: "https://res.cloudinary.com/devatchannel/image/upload/v1602752402/avatar/avatar_cugq40.png"
   },
+  rf_token: { type: String, select: false }
 }, { timestamps: true });
 
 export default mongoose.model<IUser>("user", userSchema);
