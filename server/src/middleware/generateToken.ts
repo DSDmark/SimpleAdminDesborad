@@ -17,13 +17,11 @@ export const generateAccessToken = (payload: object) => {
 
 export const generateRefreshToken = (payload: object, res: Response) => {
   const rf_token = jwt.sign(payload, `${REFRESH_TOKEN_SECRET}`, { expiresIn: "30d" })
-
-  res.cookie("rf_token", rf_token, {
+  res.cookie("rftoken", rf_token, {
     httpOnly: true,
-    path: "/api/refresh_token",
+    path: "/api/rftoken",
     maxAge: 30 * 24 * 60 * 60 * 1000   // for 30 day according jwt we define above
   })
 
   return rf_token
 }
-

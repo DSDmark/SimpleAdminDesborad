@@ -2,12 +2,14 @@ lockfileVersion: 5.4
 
 specifiers:
   '@types/bcrypt': ^5.0.0
+  '@types/cookie-parser': ^1.4.3
   '@types/cors': ^2.8.13
   '@types/express': ^4.17.17
   '@types/jsonwebtoken': ^9.0.2
   '@types/node': ^20.3.2
   '@types/nodemailer': ^6.4.8
   bcrypt: ^5.1.0
+  cookie-parser: ^1.4.6
   cors: ^2.8.5
   dotenv: ^16.3.1
   express: ^4.18.2
@@ -22,6 +24,7 @@ specifiers:
 
 dependencies:
   bcrypt: 5.1.0
+  cookie-parser: 1.4.6
   cors: 2.8.5
   express: 4.18.2
   google-auth-library: 8.9.0
@@ -31,6 +34,7 @@ dependencies:
 
 devDependencies:
   '@types/bcrypt': 5.0.0
+  '@types/cookie-parser': 1.4.3
   '@types/cors': 2.8.13
   '@types/express': 4.17.17
   '@types/jsonwebtoken': 9.0.2
@@ -137,6 +141,12 @@ packages:
     resolution: {integrity: sha512-cdeYyv4KWoEgpBISTxWvqYsVy444DOqehiF3fM3ne10AmJ62RSyNkUnxMJXHQWRQQX2eR94m5y1IZyDwBjV9FQ==}
     dependencies:
       '@types/node': 20.3.2
+    dev: true
+
+  /@types/cookie-parser/1.4.3:
+    resolution: {integrity: sha512-CqSKwFwefj4PzZ5n/iwad/bow2hTCh0FlNAeWLtQM3JA/NX/iYagIpWG2cf1bQKQ2c9gU2log5VUCrn7LDOs0w==}
+    dependencies:
+      '@types/express': 4.17.17
     dev: true
 
   /@types/cors/2.8.13:
@@ -452,8 +462,21 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
+  /cookie-parser/1.4.6:
+    resolution: {integrity: sha512-z3IzaNjdwUC2olLIB5/ITd0/setiaFMLYiZJle7xg5Fe9KWAceil7xszYfHHBtDFYLSgJduS2Ty0P1uJdPDJeA==}
+    engines: {node: '>= 0.8.0'}
+    dependencies:
+      cookie: 0.4.1
+      cookie-signature: 1.0.6
+    dev: false
+
   /cookie-signature/1.0.6:
     resolution: {integrity: sha512-QADzlaHc8icV8I7vbaJXJwod9HWYp8uCqf1xa4OfNu1T7JVxQIrUgOWtHdNDtPiywmFbiS12VjotIXLrKM3orQ==}
+    dev: false
+
+  /cookie/0.4.1:
+    resolution: {integrity: sha512-ZwrFkGJxUR3EIoXtO+yVE69Eb7KlixbaeAWfBQB9vVsNn/o+Yw69gBWSSDK825hQNdN+wF8zELf3dFNl/kxkUA==}
+    engines: {node: '>= 0.6'}
     dev: false
 
   /cookie/0.5.0:
