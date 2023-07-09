@@ -1,12 +1,12 @@
 import { Response, Request } from "express"
-import User, { IUser } from "../models/userModel"
+import User from "../models/userModel"
 import bcrypt from "bcrypt";
 import { generateAccessToken, generateActiveToken, generateRefreshToken } from "../middleware/generateToken";
 import { validateMail } from "../middleware/validation";
 import { log } from "console";
 import mailSender from "../config/mail";
 import jwt from "jsonwebtoken";
-import { IDecodedToken } from "../config/interface";
+import { IDecodedToken, IReqAuth, IUser } from "../config/interface";
 
 const { BASE_URL, ACTIVE_TOKEN_SECRET, REFRESH_TOKEN_SECRET } = process.env
 
@@ -69,9 +69,30 @@ const authCtrl = {
       return res.status(400).json({ msg: "Credential are not valid ❌" })
     }
   },
+  logout: async (req: Request, res: Response) => {
+    try {
+
+      // checking if user already logged out
+      // if (!(req.cookies.rf_token)) return res.status(500).json({ msg: "You are already logged out!" })
+
+      const { id } = req.query
+      res.clearCookie("rf_token", { path: "/api/user/rf_token" })
+
+
+      await User.findOneAndUpdate({ _id: id }, {
+        rf_token: " "
+      })
+
+      return res.json({ msg: "Logged out!" })
+
+    } catch (err: any) {
+      log(err)
+      return res.status(500).json({ msg: err.message });
+    }
+  },
   rftVarification: async (req: Request, res: Response) => {
     try {
-      const rf_token = req.cookies.rftoken;
+      const rf_token = req.cookies.rf_token;
       if (!rf_token) {
         return res.status(400).json({ msg: "Please login now!" });
       }
@@ -88,6 +109,28 @@ const authCtrl = {
     } catch (err: any) {
       log(err)
       res.status(500).json({ msg: err.message })
+    }
+  },
+  forgetPassword: async (req: Request, res: Response) => {
+    try {
+      const { account } = req.body;
+      const user = await User.findOne({ account })
+
+      // checking if user exist or not
+      if (!user) return res.status(400).json({ msg: "Email is not exist" })
+
+      const access_token = generateAccessToken({ id: user._id })
+      const url = `${BASE_URL}/api/reset/${access_token}`;
+
+      if (validateMail(account)) {
+        mailSender(account, url, "Resert your mail")
+        return res.json({ msg: `Please check your mail`, url: url })
+      } else {
+        return res.status(500).json({ msg: "valid mail" })
+      }
+    } catch (err: any) {
+      log(err)
+      return res.status(500).json({ msg: err.message })
     }
   }
 }
