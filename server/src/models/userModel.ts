@@ -1,4 +1,4 @@
-import mongoose, { Document } from "mongoose";
+import mongoose from "mongoose";
 import { IUser } from "../config/interface";
 
 const userSchema = new mongoose.Schema({

@@ -1,5 +1,6 @@
 import express from "express"
 import authCtrl from "../controlles/authCtrl"
+import headerAuth from "../middleware/headerAuth";
 
 const router = express.Router()
 
@@ -13,10 +14,10 @@ router.post("/activation", authCtrl.accountActivation);
 router.post("/login", authCtrl.login);
 
 // adding cookies by refresh token
-router.post("/user/rf_token", authCtrl.rftVarification);
+router.post("/rf_token", authCtrl.rftVarification);
 
 // removing refresh token for logout
-router.post("/logout", authCtrl.logout);
+router.post("/logout", headerAuth, authCtrl.logout);
 
 // generating url for reserting password through mail
 router.post("/forget_password", authCtrl.forgetPassword);
