@@ -5,7 +5,7 @@ dotenv.config();
 import express from "express"
 import cors from "cors"
 import cookieParser from "cookie-parser"
-import router from "./routes/authRout";
+import routes from "./routes/index";
 
 
 const app = express();
@@ -22,7 +22,7 @@ const PORT = process.env.PORT || 8000;
 import "./config/db"
 
 // routes 
-app.use("/api", router);
+app.use("/api", routes);
 
 app.listen(PORT, () => {
   console.log(`Server Running on Port:${PORT}`);

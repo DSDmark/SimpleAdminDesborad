@@ -69,17 +69,12 @@ const authCtrl = {
       return res.status(400).json({ msg: "Credential are not valid ❌" })
     }
   },
-  logout: async (req: Request, res: Response) => {
+  logout: async (req: IReqAuth, res: Response) => {
+    if (!(req.user)) return res.status(500).json({ msg: "Invalid auth" })
     try {
+      res.clearCookie("rf_token", { path: "/api/rf_token" })
 
-      // checking if user already logged out
-      // if (!(req.cookies.rf_token)) return res.status(500).json({ msg: "You are already logged out!" })
-
-      const { id } = req.query
-      res.clearCookie("rf_token", { path: "/api/user/rf_token" })
-
-
-      await User.findOneAndUpdate({ _id: id }, {
+      await User.findOneAndUpdate({ _id: req.user._id }, {
         rf_token: " "
       })
 
@@ -120,7 +115,7 @@ const authCtrl = {
       if (!user) return res.status(400).json({ msg: "Email is not exist" })
 
       const access_token = generateAccessToken({ id: user._id })
-      const url = `${BASE_URL}/api/reset/${access_token}`;
+      const url = `${BASE_URL}/api/user/reset_password/${access_token}`;
 
       if (validateMail(account)) {
         mailSender(account, url, "Resert your mail")
