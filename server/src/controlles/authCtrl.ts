@@ -16,7 +16,7 @@ const authCtrl = {
       const { firstName, lastName, location, account, password } = req.body;
 
       // checking if user exist or not
-      const newMail = await User.findOne({ account })
+      const newMail =   await User.findOne({ account })
       if (newMail) return res.status(400).json({ msg: "This email is already exist" })
       if (password.length < 8) return res.status(400).json({ msg: "Your password is too short" })
       const hashPassword = await bcrypt.hash(password, 12)
