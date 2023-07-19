@@ -1,9 +1,11 @@
-function App() {
+import { MainLayout } from './components/'
+import RoutesLayout from './routes/'
 
+const App = () => {
   return (
-    <>
-      "heloow"
-    </>
+    <MainLayout>
+      <RoutesLayout />
+    </MainLayout>
   )
 }
 
