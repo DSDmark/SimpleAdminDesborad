@@ -1,3 +1,2 @@
-export { default as MainLayout } from './layout/'
-export { default as Header } from './header/'
-export { default as Footer } from './footer/'
+export { Header, Footer } from './layout/'
+export { Button } from './ui/'

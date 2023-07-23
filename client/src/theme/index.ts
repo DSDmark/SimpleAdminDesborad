@@ -1,26 +1,14 @@
+import { grey, blueGrey } from '@mui/material/colors'
 import {
   createTheme,
   Theme,
   responsiveFontSizes,
   PaletteMode,
 } from '@mui/material'
-import { grey, blueGrey } from '@mui/material/colors'
-
-const darkModeTheme = {
-  primary: {
-    main: grey[500],
-    dark: blueGrey[700],
-  },
-}
-
-const lightModeTheme = {
-  primary: {
-    main: grey[500],
-    dark: blueGrey[700],
-  },
-}
 
 const createAppTheme = (preferredTheme: PaletteMode) => {
+  let isDark = preferredTheme === 'dark' ? true : false
+
   const theme: Theme = createTheme({
     components: {
       MuiCssBaseline: {
@@ -47,7 +35,14 @@ const createAppTheme = (preferredTheme: PaletteMode) => {
     },
     palette: {
       mode: preferredTheme,
-      ...(preferredTheme === 'dark' ? darkModeTheme : lightModeTheme),
+      primary: {
+        main: grey[500],
+        light: grey[500],
+        dark: blueGrey[700],
+      },
+      background: {
+        default: isDark ? grey[900] : grey[200],
+      },
     },
   })
   return responsiveFontSizes(theme)

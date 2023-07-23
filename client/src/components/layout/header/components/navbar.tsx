@@ -1,11 +1,4 @@
-import {
-  Link as MuiLink,
-  AppBar,
-  Grid,
-  Box,
-  Toolbar,
-  Typography,
-} from '@mui/material'
+import { AppBar, Toolbar } from '@mui/material'
 
 const NavBar = () => {
   return (

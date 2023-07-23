@@ -1,0 +1,25 @@
+# Default behavior for all text files
+
+* text=auto
+
+# Treated as binary
+*.png binary
+*,jpg binary
+*.pdf binary
+
+# File custom handling
+*.gitattributes text
+.gitignore      text
+.env            text
+*.env           text
+*.md            text diff=markdown
+*.html          text diff=html
+*.css           text
+*.scss          text
+*.js            text
+*.jsx           text
+*.ts            text
+*.tsx           text
+
+# Enable syntax highlighting
+*.gitattributes linguist-language=gitattributes
