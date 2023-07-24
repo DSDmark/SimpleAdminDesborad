@@ -1,16 +1,14 @@
 import RoutesLayout from './routes/'
 import createAppTheme from './theme/'
-import { ThemeProvider, CssBaseline, Container } from '@mui/material'
+import { ThemeProvider, CssBaseline } from '@mui/material'
 
 const App = () => {
-  const theme = createAppTheme('dark')
+  const theme = createAppTheme('light')
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Container>
-        <RoutesLayout />
-      </Container>
+      <RoutesLayout />
     </ThemeProvider>
   )
 }

@@ -1,6 +1,6 @@
-import { ReactNode } from 'react'
-
-export interface IProps{
-
+export interface IProps {
+  numRows: number
+  numCols: number
+  width: string
+  height: string
 }
-

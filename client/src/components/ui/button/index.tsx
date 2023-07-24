@@ -5,7 +5,7 @@ const props: ButtonProps = {
   color: 'secondary',
   variant: 'outlined',
   size: 'large',
-  fullWidth: true,
+  sx: { ml: '2%' },
 }
 
 const Button = ({ children }: IChildren) => {
