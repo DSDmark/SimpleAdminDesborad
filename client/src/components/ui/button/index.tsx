@@ -2,7 +2,7 @@ import { IChildren } from './type'
 import { Button as MuiButton, ButtonProps } from '@mui/material'
 
 const props: ButtonProps = {
-  color: 'secondary',
+  color: 'info',
   variant: 'outlined',
   size: 'large',
   sx: { ml: '2%' },
