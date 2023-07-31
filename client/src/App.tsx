@@ -1,13 +1,9 @@
 import RoutesLayout from './routes/'
-import createAppTheme from './theme/'
-import { ThemeProvider, CssBaseline } from '@mui/material'
+import ThemeProvider from './theme'
 
 const App = () => {
-  const theme = createAppTheme('light')
-
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
+    <ThemeProvider preferredTheme={'dark'}>
       <RoutesLayout />
     </ThemeProvider>
   )
