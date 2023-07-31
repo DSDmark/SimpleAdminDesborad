@@ -1,13 +1,13 @@
 
 <div align="center">
 
-# SimpleWeb 💤
+# SimpleAdminDesborad 💤
 
-![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/DSDmark/SimpleWeb)
-![GitHub](https://img.shields.io/github/license/DSDmark/SimpleWeb)
-![GitHub language count](https://img.shields.io/github/languages/count/DSDmark/SimpleWeb)
-![GitHub last commit](https://img.shields.io/github/last-commit/DSDmark/SimpleWeb)
-[![Netlify Deploy](https://github.com/DSDmark/SimpleWeb/actions/workflows/main.yml/badge.svg)](https://github.com/DSDmark/SimpleWeb/actions/workflows/main.yml)
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/DSDmark/SimpleAdminDesborad)
+![GitHub](https://img.shields.io/github/license/DSDmark/SimpleAdminDesborad)
+![GitHub language count](https://img.shields.io/github/languages/count/DSDmark/SimpleAdminDesborad)
+![GitHub last commit](https://img.shields.io/github/last-commit/DSDmark/SimpleAdminDesborad)
+[![Netlify Deploy](https://github.com/DSDmark/SimpleAdminDesborad/actions/workflows/main.yml/badge.svg)](https://github.com/DSDmark/SimpleAdminDesborad/actions/workflows/main.yml)
 
 ## Apis integration example with Vitets, Redux toolkit, Material-ui 🚀 with GitHub-APIs.
 
@@ -15,7 +15,7 @@
 
 ## Purpose 😑
 
-> The **SimpleWeb** web app serves as an example of how to Build Vitets App with Includes [**@mui/Material**](mui.com/) and **Redux toolkit** its peer dependencies, which include emotion, the built-in style engine in **MUI v5**. Moreover, it is employed by **RESTful APIs** and It works with the `Docker` platform.
+> The **SimpleAdminDesborad** web app serves as an example of how to Build Vitets App with Includes [**@mui/Material**](mui.com/) and **Redux toolkit** its peer dependencies, which include emotion, the built-in style engine in **MUI v5**. Moreover, it is employed by **RESTful APIs** and It works with the `Docker` platform.
 
 </div>
 
@@ -57,19 +57,19 @@ Once you are done you can close 🔒 the application in your terminal to quit th
 
 </div>
 
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/DSDmark/SimpleWeb/tree/master)
+[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/DSDmark/SimpleAdminDesborad/tree/main)
 
 <div align="left">
 
-## Try Out SimpleCURD Demo 🚀
+## Try Out SimpleAdminDesborad Demo 🚀
 
-<a href="https://simplewebs.netlify.app" alt="SimpleWeb">SimpleWeb</a>
+<a href="https://simplewebs.netlify.app" alt="SimpleAdminDesborad">SimpleAdminDesborad</a>
 
 </div>
 
-### SimpleWeb
+### SimpleAdminDesborad
 
-![SimpleWeb perview](./assets/perview.gif "SimpleWeb")
+![SimpleAdminDesborad perview](./assets/perview.gif "SimpleAdminDesborad")
 
 > If you have any issues with that Application feel free to let me know 🙃!
 
