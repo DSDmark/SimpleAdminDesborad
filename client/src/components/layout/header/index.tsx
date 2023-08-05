@@ -1,16 +1,22 @@
-import { Typography } from '@mui/material'
-import NavBar from './navbar'
-import { Button } from '@/components'
-import { Link } from '@mui/material'
+// routes
+import { Outlet } from 'react-router-dom'
+
+// header components
+import HeaderBar from './headerBar'
+import NavDrawerComponent from './navDrawerComponent'
+
+// styles
+import { DivStyle, MainStyle } from './style'
 
 const Header = () => {
   return (
-    <div>
-      <NavBar />
-      <Typography>Header</Typography>
-      <Button>"hey</Button>
-      <Link> sdf</Link>
-    </div>
+    <DivStyle>
+      <HeaderBar />
+      <NavDrawerComponent />
+      <MainStyle>
+        <Outlet />
+      </MainStyle>
+    </DivStyle>
   )
 }
 

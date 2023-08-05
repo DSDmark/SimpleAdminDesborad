@@ -1,14 +1,18 @@
-import { Route, BrowserRouter, Routes } from 'react-router-dom'
-import { Home, About, Login } from '@/pages'
-import NotFound from './LazyRoute'
-import { Footer, Header } from '@/components'
 import { Suspense } from 'react'
+
+// routes
+import { Route, BrowserRouter, Routes } from 'react-router-dom'
+import NotFound from './LazyRoute'
+
+// pages
+import { Home, About, Login } from '@/pages'
+import { Header } from '@/components'
 
 const RoutesLayout = () => {
   return (
     <BrowserRouter>
       <Suspense fallback={'loading...'}>
-        <Header />
+        <Header/>
         <Routes>
           <Route element={<Home />}>
             <Route path='/home' />
@@ -18,7 +22,6 @@ const RoutesLayout = () => {
           <Route path='/about' element={<About />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
-        <Footer />
       </Suspense>
     </BrowserRouter>
   )
