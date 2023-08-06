@@ -1,5 +1,5 @@
 import { alpha } from '@mui/material'
-import { IColor } from './types'
+import { IColor } from '../types'
 
 const withAlphas = (color: IColor) => {
   return {
