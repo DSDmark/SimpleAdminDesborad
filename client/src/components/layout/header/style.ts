@@ -3,9 +3,9 @@ import {
   AppBar,
   Toolbar,
   styled,
-  ListItemButton,
   ListItemIcon,
   alpha,
+  Button,
 } from '@mui/material'
 
 // headerBar
@@ -56,9 +56,11 @@ export const StyledAccount = styled('div')(({ theme }) => ({
 }))
 
 // nav-section
-export const StyledNavItem = styled('div')(({ theme }) => ({
+export const StyledNavItem = styled(Button)(({ theme }) => ({
   ...theme.typography.body2,
   height: 48,
+  width: '100%',
+  textAlign: 'left',
   position: 'relative',
   textTransform: 'capitalize',
   color: theme.palette.text.secondary,

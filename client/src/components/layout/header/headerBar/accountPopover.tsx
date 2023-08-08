@@ -10,7 +10,7 @@ import {
   Popover,
 } from '@mui/material'
 
-// _mock data
+// data
 import account from '@/contants/account'
 
 // hook
@@ -35,14 +35,15 @@ const AccountPopover = () => {
             {account.email}
           </Typography>
         </Box>
+
         <Divider sx={{ borderStyle: 'dashed' }} />
+
         <Stack p={1}>
           {MEMU_OPTION.map(option => (
             <MenuItem onClick={handleClose}>{option}</MenuItem>
           ))}
         </Stack>
         <Divider sx={{ borderStyle: 'dashed' }} />
-
         <MenuItem onClick={handleClose} sx={{ m: 1 }}>
           Logout
         </MenuItem>

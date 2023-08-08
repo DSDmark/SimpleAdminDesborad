@@ -1,13 +1,21 @@
 // @mui
-import { Box, List, ListItemText } from '@mui/material'
+import { Box, List, ListItemButton, ListItemText } from '@mui/material'
+import { GitHub } from '@mui/icons-material'
 
 // routes
-import { NavLink as RouterLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 // styles
-import { StyledNavItem } from '../style'
+import { StyledNavItem, StyledNavItemIcon } from '../style'
 
-export default function NavSection({ data = [], ...other }) {
+// types
+import { INavData, INavDataProps } from '../type'
+
+interface INavItemProps {
+  item: INavData // Define the 'item' prop in NavItemProps
+}
+
+export default function NavSection({ data, ...other }: INavDataProps) {
   return (
     <Box {...other}>
       <List disablePadding sx={{ p: 1 }}>
@@ -19,13 +27,12 @@ export default function NavSection({ data = [], ...other }) {
   )
 }
 
-function NavItem(item) {
-  const { title, path, info } = item
-
+function NavItem({ item }: INavItemProps) {
+  const { title, path } = item
   return (
-    <StyledNavItem
-      component={RouterLink}
-      to={path}
+    <ListItemButton
+      LinkComponent={Link}
+      href={path}
       sx={{
         '&.active': {
           color: 'text.primary',
@@ -33,7 +40,10 @@ function NavItem(item) {
           fontWeight: 'fontWeightBold',
         },
       }}>
+      <StyledNavItemIcon>
+        <GitHub />
+      </StyledNavItemIcon>
       <ListItemText disableTypography primary={title} />
-    </StyledNavItem>
+    </ListItemButton>
   )
 }
