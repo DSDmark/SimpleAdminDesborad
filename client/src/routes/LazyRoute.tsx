@@ -1,5 +1,11 @@
-import { lazy } from 'react'
+import { lazy, Suspense } from 'react'
 
-const NotFound = lazy(() => import('@/pages/404/components/index'))
+const NotFoundLazy = lazy(() => import('@/pages/404/components/index'))
 
-export default NotFound
+export default function NotFound() {
+  return (
+    <Suspense fallback={'loading...'}>
+      <NotFoundLazy />
+    </Suspense>
+  )
+}

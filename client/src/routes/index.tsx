@@ -1,28 +1,35 @@
-import { Suspense } from 'react'
-
 // routes
-import { Route, BrowserRouter, Routes } from 'react-router-dom'
+import { BrowserRouter, useRoutes } from 'react-router-dom'
 import NotFound from './LazyRoute'
 
 // pages
 import { Home, About, Login } from '@/pages'
 import { Header } from '@/components'
 
+// hooks
+import { useSrcollTop } from '@/hooks'
+
 const RoutesLayout = () => {
+  const ScrollTop = () => useSrcollTop()
+
+  const Routes = () =>
+    useRoutes([
+      {
+        path: '/',
+        element: <Header />,
+        children: [
+          { path: 'home', element: <Home /> },
+          { path: 'abou', element: <About /> },
+          { path: 'login', element: <Login /> },
+        ],
+      },
+      { path: '*', element: <NotFound /> },
+    ])
+
   return (
     <BrowserRouter>
-      <Suspense fallback={'loading...'}>
-        <Header/>
-        <Routes>
-          <Route element={<Home />}>
-            <Route path='/home' />
-            <Route path='/' />
-          </Route>
-          <Route path='/login' element={<Login />} />
-          <Route path='/about' element={<About />} />
-          <Route path='*' element={<NotFound />} />
-        </Routes>
-      </Suspense>
+      <ScrollTop />
+      <Routes />
     </BrowserRouter>
   )
 }

@@ -1,12 +1,22 @@
 // @mui
-import { Box, List, ListItemButton, ListItemText } from '@mui/material'
+import { styled, Link as MuiLink, Box, List, ListItemText } from '@mui/material'
 import { GitHub } from '@mui/icons-material'
 
 // routes
-import { Link } from 'react-router-dom'
+import { Link as RouterLink } from 'react-router-dom'
 
 // styles
-import { StyledNavItem, StyledNavItemIcon } from '../style'
+import { StyledNavItemIcon } from '../style'
+const StyledNavItem = styled(MuiLink)(({ theme }) => ({
+  ...theme.typography.body2,
+  height: 48,
+  width: '100%',
+  textAlign: 'left',
+  position: 'relative',
+  textTransform: 'capitalize',
+  color: theme.palette.text.secondary,
+  borderRadius: theme.shape.borderRadius,
+}))
 
 // types
 import { INavData, INavDataProps } from '../type'
@@ -30,9 +40,9 @@ export default function NavSection({ data, ...other }: INavDataProps) {
 function NavItem({ item }: INavItemProps) {
   const { title, path } = item
   return (
-    <ListItemButton
-      LinkComponent={Link}
-      href={path}
+    <StyledNavItem
+      as={RouterLink}
+      children={[{ href: path }]}
       sx={{
         '&.active': {
           color: 'text.primary',
@@ -44,6 +54,6 @@ function NavItem({ item }: INavItemProps) {
         <GitHub />
       </StyledNavItemIcon>
       <ListItemText disableTypography primary={title} />
-    </ListItemButton>
+    </StyledNavItem>
   )
 }

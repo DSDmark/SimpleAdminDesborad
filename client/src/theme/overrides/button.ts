@@ -1,26 +1,40 @@
-import { Theme } from '@mui/material'
+import { Theme, alpha } from '@mui/material'
 
 export default function Button(theme: Theme) {
-  const disabledStyled = {
-    '&.Mui-disabled': {
-      background: theme.palette.grey[200],
-    },
-  }
-
   return {
     MuiButton: {
-      defaultProps: {
-        disableElevation: true,
-      },
       styleOverrides: {
         root: {
-          footWeight: 400,
+          '&:hover': {
+            boxShadow: 'none',
+          },
         },
-        contained: {
-          ...disabledStyled,
+        sizeLarge: {
+          height: 48,
         },
-        outlined: {
-          ...disabledStyled,
+        containedInherit: {
+          color: theme.palette.grey[800],
+          boxShadow: theme.shadows,
+          '&:hover': {
+            backgroundColor: theme.palette.grey[400],
+          },
+        },
+        containedPrimary: {
+          boxShadow: theme.shadows,
+        },
+        containedSecondary: {
+          boxShadow: theme.shadows,
+        },
+        outlinedInherit: {
+          border: `1px solid ${alpha(theme.palette.grey[500], 0.32)}`,
+          '&:hover': {
+            backgroundColor: theme.palette.action.hover,
+          },
+        },
+        textInherit: {
+          '&:hover': {
+            backgroundColor: theme.palette.action.hover,
+          },
         },
       },
     },
