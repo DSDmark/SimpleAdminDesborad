@@ -1,5 +1,8 @@
-import RoutesLayout from './routes/'
+// providers
 import ThemeProvider from './theme'
+
+// routers
+import RoutesLayout from './routes/'
 
 const App = () => {
   return (

@@ -5,7 +5,7 @@ import {
   styled,
   ListItemIcon,
   alpha,
-  Button,
+  Link as MuiLink,
 } from '@mui/material'
 
 // headerBar
@@ -56,7 +56,7 @@ export const StyledAccount = styled('div')(({ theme }) => ({
 }))
 
 // nav-section
-export const StyledNavItem = styled(Button)(({ theme }) => ({
+export const StyledNavItem = styled(MuiLink)(({ theme }) => ({
   ...theme.typography.body2,
   height: 48,
   width: '100%',
