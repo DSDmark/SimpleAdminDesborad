@@ -1,4 +1,5 @@
-export { default as Home } from './home/components/'
-export { default as About } from './about/components'
+export { default as DetailPenal } from './detailPenal/components/'
+export { default as DasboardApp } from './dasboardApp/components'
 export { default as NotFoundPage } from './404/components'
 export { default as Login } from './login/components'
+export { default as Register } from './register/components'

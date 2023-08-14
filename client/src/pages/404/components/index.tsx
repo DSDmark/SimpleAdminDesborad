@@ -1,5 +1,5 @@
 // route
-import { Link as RouterLink } from 'react-router-dom'
+import { RouterLink } from '@/components'
 
 // @mui
 import { Button, Typography, Container, Box } from '@mui/material'
@@ -13,7 +13,7 @@ import { useSiteTitle } from '@/hooks'
 const NotFountPage = () => {
   useSiteTitle('404 Page Not Found')
   return (
-    <Container sx={{display:"flex",justifyContent:"center"}}>
+    <Container sx={{ display: 'flex', justifyContent: 'center' }}>
       <ContentStyle>
         <Typography variant='h3' paragraph>
           Sorry, page not found!
