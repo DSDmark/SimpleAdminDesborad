@@ -1,28 +1,17 @@
 // @mui
-import { styled, Link as MuiLink, Box, List, ListItemText } from '@mui/material'
-import { GitHub } from '@mui/icons-material'
+import { Box, List, ListItemText } from '@mui/material'
 
-// routes
-import { Link as RouterLink } from 'react-router-dom'
+// ui
+import { RouterLink } from '@/components'
 
 // styles
-import { StyledNavItemIcon } from '../style'
-const StyledNavItem = styled(MuiLink)(({ theme }) => ({
-  ...theme.typography.body2,
-  height: 48,
-  width: '100%',
-  textAlign: 'left',
-  position: 'relative',
-  textTransform: 'capitalize',
-  color: theme.palette.text.secondary,
-  borderRadius: theme.shape.borderRadius,
-}))
+import { StyledNavItemIcon, StyledNavItem } from '../style'
 
 // types
 import { INavData, INavDataProps } from '../type'
 
 interface INavItemProps {
-  item: INavData // Define the 'item' prop in NavItemProps
+  item: INavData
 }
 
 export default function NavSection({ data, ...other }: INavDataProps) {
@@ -38,22 +27,20 @@ export default function NavSection({ data, ...other }: INavDataProps) {
 }
 
 function NavItem({ item }: INavItemProps) {
-  const { title, path } = item
+  const { title, path, icon } = item
   return (
-    <StyledNavItem
-      as={RouterLink}
-      children={[{ href: path }]}
-      sx={{
-        '&.active': {
-          color: 'text.primary',
-          bgcolor: 'action.selected',
-          fontWeight: 'fontWeightBold',
-        },
-      }}>
-      <StyledNavItemIcon>
-        <GitHub />
-      </StyledNavItemIcon>
-      <ListItemText disableTypography primary={title} />
-    </StyledNavItem>
+    <RouterLink to={path}>
+      <StyledNavItem
+        sx={{
+          '&.active': {
+            color: 'text.primary',
+            bgcolor: 'action.selected',
+            fontWeight: 'fontWeightBold',
+          },
+        }}>
+        <StyledNavItemIcon>{icon}</StyledNavItemIcon>
+        <ListItemText disableTypography primary={title} />
+      </StyledNavItem>
+    </RouterLink>
   )
 }

@@ -1,58 +1,42 @@
 // @mui
-import { styled, alpha } from '@mui/material/styles'
 import {
   Box,
-  Link,
-  Button,
   Drawer,
   Typography,
   Avatar,
   Stack,
+  Button,
   DrawerProps,
+  Link,
 } from '@mui/material'
 
 // contants data
 import account from '@/contants/account'
+import logo from '@/contants/logo'
 
 // styles
 import { NAV_WIDTH, StyledAccount } from '../style'
+
+// ui
+import { RouterLink } from '@/components'
 
 // global hooks
 import useResponsiveQuery from '@/hooks/useResponsive'
 import NavSection from './nav-section'
 
-const navConfig = [
-  {
-    title: 'dashboard',
-    path: '/dashboard/app',
-  },
-  {
-    title: 'user',
-    path: '/dashboard/user',
-  },
-  {
-    title: 'product',
-    path: '/dashboard/products',
-  },
-  {
-    title: 'blog',
-    path: '/dashboard/blog',
-  },
-  {
-    title: 'login',
-    path: '/login',
-  },
-  {
-    title: 'Not found',
-    path: '/404',
-  },
-]
+// data
+import navConfig from '../data'
 
 const NavDrawerComponent = () => {
   const isDesktop: boolean = useResponsiveQuery('up', 'lg')
   const DrawerContent = (
     <Box>
-      <Box sx={{ px: 2.5, py: 3, display: 'inline-flex' }}>DSDmark</Box>
+      <Box
+        component={RouterLink}
+        to={logo.href}
+        sx={{ px: 2.5, py: 3, display: 'inline-flex' }}>
+        {logo.name}
+      </Box>
       <Box sx={{ mb: 5, mx: 2.5 }}>
         <Link underline='none'>
           <StyledAccount>
@@ -75,7 +59,7 @@ const NavDrawerComponent = () => {
 
       <Box sx={{ flexGrow: 1 }} />
 
-      <Box sx={{ px: 2.5, pb: 3, mt: 10 }}>
+      <Box sx={{ px: 2.5, pb: 3, mt: '100%' }}>
         <Stack
           alignItems='center'
           spacing={3}
@@ -92,15 +76,11 @@ const NavDrawerComponent = () => {
             </Typography>
 
             <Typography variant='body2' sx={{ color: 'text.secondary' }}>
-              From only $69
+              get source code
             </Typography>
           </Box>
-
-          <Button
-            href='https://material-ui.com/store/items/minimal-dashboard/'
-            target='_blank'
-            variant='contained'>
-            Upgrade to Pro
+          <Button href='#' target='_blank' variant='contained'>
+            go to github
           </Button>
         </Stack>
       </Box>

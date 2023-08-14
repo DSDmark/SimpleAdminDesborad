@@ -1,13 +1,10 @@
 export default function Link() {
   return {
     MuiLink: {
-      defaultProps: {
-        underline: 'hover' as const,
-      },
       styleOverrides: {
         root: {
+          underline: 'none',
           '&:hover': {
-            color: 'red',
             cursor: 'pointer',
           },
         },

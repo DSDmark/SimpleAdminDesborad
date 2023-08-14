@@ -10,9 +10,10 @@ export type OpenState = HTMLButtonElement | null
 export interface INavData {
   title: string
   path: string
+  icon: any
 }
 
 export interface INavDataProps {
   data: INavData[]
-  other: BoxProps
+  other?: BoxProps
 }

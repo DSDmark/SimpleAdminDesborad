@@ -3,8 +3,7 @@ import { BrowserRouter, useRoutes } from 'react-router-dom'
 import NotFound from './LazyRoute'
 
 // pages
-import { Home, About, Login } from '@/pages'
-import { Header } from '@/components'
+import { DetailPenal, DasboardApp, Login, Register } from '@/pages'
 
 // hooks
 import { useSrcollTop } from '@/hooks'
@@ -15,13 +14,17 @@ const RoutesLayout = () => {
   const Routes = () =>
     useRoutes([
       {
-        path: '/',
-        element: <Header />,
-        children: [
-          { path: 'home', element: <Home /> },
-          { path: 'abou', element: <About /> },
-          { path: 'login', element: <Login /> },
-        ],
+        path: '/dasboard',
+        element: <DasboardApp />,
+        children: [{ path: '/dasboard/app', element: <DetailPenal /> }],
+      },
+      {
+        path: '/login',
+        element: <Login />,
+      },
+      {
+        path: '/create-account',
+        element: <Register />,
       },
       { path: '*', element: <NotFound /> },
     ])
