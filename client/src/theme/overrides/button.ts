@@ -1,4 +1,4 @@
-import { Theme } from '@mui/material'
+import { Theme, alpha } from '@mui/material'
 
 export default function Button(theme: Theme) {
   return {
@@ -9,11 +9,25 @@ export default function Button(theme: Theme) {
           '&:hover': {
             boxShadow: 'none',
           },
-          padding: theme.spacing(1, 2),
-          color: 'white',
         },
-        containedPrimary: {
+        sizeLarge: {
+          height: 48,
+        },
+        containedInherit: {
+          color: theme.palette.grey[800],
           boxShadow: theme.shadows,
+          '&:hover': {
+            backgroundColor: theme.palette.grey[400],
+          },
+        },
+        containedSecondary: {
+          boxShadow: theme.shadows,
+        },
+        outlinedInherit: {
+          border: `1px solid ${alpha(theme.palette.grey[500], 0.32)}`,
+          '&:hover': {
+            backgroundColor: theme.palette.action.hover,
+          },
         },
       },
     },

@@ -22,6 +22,7 @@ const ThemeProvider = ({ children, preferredTheme }: IThemeProvider) => {
 
   const themeOption: ThemeOptions = useMemo(
     () => ({
+      
       breakpoints,
       palette,
       customShadows,

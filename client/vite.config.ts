@@ -5,12 +5,10 @@ import { resolve } from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  server:{
-    port:8080,
+  server: {
+    port: 8080,
   },
-  resolve:{
-    alias:[
-      {find:"@",replacement:resolve(__dirname,"src")}
-    ]
-  }
+  resolve: {
+    alias: [{ find: '@', replacement: resolve(__dirname, 'src') }],
+  },
 })
