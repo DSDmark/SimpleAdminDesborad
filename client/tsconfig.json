@@ -19,10 +19,11 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "assets": ["/public/assets"]
     }
   },
-  "include": ["src", "vite-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["vite-env.d.ts", "**/*.ts", "**/*.tsx"],
   "references": [
     {
       "path": "./tsconfig.node.json"

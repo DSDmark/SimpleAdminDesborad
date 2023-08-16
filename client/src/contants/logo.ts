@@ -1,5 +1,5 @@
 const logo = {
-  name: 'DSDmark',
+  name: 'SimpleAdminDasboard',
   href: '/dashboard',
   src: 'DSDmark3294@gmail.com',
 }

@@ -6,6 +6,7 @@ import Button from './button'
 import Tooltip from './tooltip'
 import SvgIcon from './svgIcon'
 import CssBaseLine from './cssbaseline'
+import Icon from './icon'
 
 export default function ComponentOverrides(theme: Theme) {
   return Object.assign(
@@ -16,5 +17,6 @@ export default function ComponentOverrides(theme: Theme) {
     Tooltip(theme),
     Popover(),
     SvgIcon(),
+    Icon(theme),
   )
 }

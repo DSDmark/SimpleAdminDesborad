@@ -5,6 +5,9 @@ import NotFound from './LazyRoute'
 // pages
 import { DetailPenal, DasboardApp, Login, Register } from '@/pages'
 
+// components
+import { Header, Footer } from '@/components'
+
 // hooks
 import { useSrcollTop } from '@/hooks'
 
