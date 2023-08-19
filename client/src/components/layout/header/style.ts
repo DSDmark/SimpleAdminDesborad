@@ -1,17 +1,8 @@
 // @mui
-import {
-  AppBar,
-  Toolbar,
-  styled,
-  ListItemIcon,
-  alpha,
-  ListItemButton,
-} from '@mui/material'
+import { AppBar, Toolbar, styled } from '@mui/material'
 
-// headerBar
-export const NAV_WIDTH = 280
-const HEADER_MOBILE = 64
-const HEADER_DESKTOP = 92
+// style
+import { NAV_WIDTH, HEADER_MOBILE, HEADER_DESKTOP } from '@/style'
 
 export const AppBarStyle = styled(AppBar)(({ theme }) => ({
   boxShadow: 'none',
@@ -27,51 +18,3 @@ export const ToolbarStyle = styled(Toolbar)(({ theme }) => ({
     padding: theme.spacing(0, 5),
   },
 }))
-
-// navBar
-export const DivStyle = styled('div')({
-  display: 'flex',
-  minHeight: '100%',
-  overflow: 'hidden',
-})
-
-export const MainStyle = styled('div')(({ theme }) => ({
-  flexGrow: 1,
-  overflow: 'auto',
-  minHeight: '100%',
-  paddingTop: HEADER_MOBILE + 24,
-  [theme.breakpoints.up('lg')]: {
-    paddingTop: HEADER_MOBILE + 24,
-    paddingLeft: theme.spacing(2),
-    paddingRight: theme.spacing(2),
-  },
-}))
-
-export const StyledAccount = styled('div')(({ theme }) => ({
-  display: 'flex',
-  alignItems: 'center',
-  padding: theme.spacing(2, 2.5),
-  borderRadius: Number(theme.shape.borderRadius) * 1.5,
-  backgroundColor: alpha(theme.palette.grey[500], 0.12),
-}))
-
-// nav-section
-export const StyledNavItem = styled(ListItemButton)(({ theme }) => ({
-  ...theme.typography.body2,
-  height: 48,
-  width: '100%',
-  textAlign: 'left',
-  position: 'relative',
-  textTransform: 'capitalize',
-  color: theme.palette.text.secondary,
-  borderRadius: theme.shape.borderRadius,
-}))
-
-export const StyledNavItemIcon = styled(ListItemIcon)({
-  width: 22,
-  height: 22,
-  color: 'inherit',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-})

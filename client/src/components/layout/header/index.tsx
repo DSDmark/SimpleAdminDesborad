@@ -1,22 +1,24 @@
-// routes
-import { Outlet } from 'react-router-dom'
+// @mui
+import { IconButton, Box, Stack } from '@mui/material'
+import { Menu } from '@mui/icons-material'
 
-// header components
-import HeaderBar from './headerBar'
-import NavDrawerComponent from './navDrawerComponent'
-
-// styles
-import { DivStyle, MainStyle } from './style'
+// style
+import { AppBarStyle, ToolbarStyle } from './style'
+import { AccountPopover } from './components'
 
 const Header = () => {
   return (
-    <DivStyle>
-      <HeaderBar />
-      <NavDrawerComponent />
-      <MainStyle>
-        <Outlet />
-      </MainStyle>
-    </DivStyle>
+    <AppBarStyle>
+      <ToolbarStyle>
+        <IconButton sx={{ mr: 1, color: 'text.primary' }}>
+          <Menu />
+        </IconButton>
+        <Box sx={{ flexGrow: 1 }} />
+        <Stack>
+          <AccountPopover />
+        </Stack>
+      </ToolbarStyle>
+    </AppBarStyle>
   )
 }
 

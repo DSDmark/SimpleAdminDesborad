@@ -10,7 +10,7 @@ import Icon from './icon'
 
 export default function ComponentOverrides(theme: Theme) {
   return Object.assign(
-    CssBaseLine(),
+    CssBaseLine(theme),
     Typography(theme),
     Link(),
     Button(theme),

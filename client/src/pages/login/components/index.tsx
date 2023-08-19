@@ -10,20 +10,26 @@ import {
   Box,
 } from '@mui/material'
 
-// styles
-import { RootStyle, SectionStyle, ContentStyle } from '../style'
+// routes
+import { Link as RouterLink } from 'react-router-dom'
 
 // hook
-import { useSiteTitle, useResponsive } from '@/hooks'
+import { useSiteTitle, useResponsive, useNProgress } from '@/hooks'
+
+// styles
+import { RootStyle, SectionStyle, ContentStyle } from '../style'
 
 // contants
 import logo from '@/contants/logo'
 import { Facebook, GitHub, Google } from '@mui/icons-material'
 
+// component
 import LoginForm from './loginForm'
 
 const Login = () => {
   const isMobile = useResponsive('up', 'md')
+  useNProgress()
+
   useSiteTitle('Login !')
 
   return (
@@ -47,7 +53,9 @@ const Login = () => {
           </Typography>
           <Typography variant='body2' mb={5}>
             don't have an account?{' '}
-            <MuiLink variant='subtitle2'> register</MuiLink>
+            <MuiLink component={RouterLink} to='/register' variant='subtitle2'>
+              register
+            </MuiLink>
           </Typography>
           <Stack direction='row' spacing={2}>
             <Button fullWidth variant='outlined' size='large' color='inherit'>

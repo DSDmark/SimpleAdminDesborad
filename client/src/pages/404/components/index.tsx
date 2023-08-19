@@ -31,7 +31,11 @@ const NotFountPage = () => {
             my: { xs: 5, sm: 10 },
           }}
         />
-        <Button variant='contained' size='large' component={RouterLink} to='/'>
+        <Button
+          variant='contained'
+          size='large'
+          component={RouterLink}
+          to='/dasboard/detail-penal'>
           go to home
         </Button>
       </ContentStyle>
