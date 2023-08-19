@@ -14,7 +14,7 @@ interface INavItemProps {
   item: INavData
 }
 
-export default function NavSection({ data, ...other }: INavDataProps) {
+export default function NavLink({ data, ...other }: INavDataProps) {
   return (
     <Box {...other}>
       <List disablePadding sx={{ p: 1 }}>

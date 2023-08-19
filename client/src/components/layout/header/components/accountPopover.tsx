@@ -14,7 +14,7 @@ import {
 import account from '@/contants/account'
 
 // hook
-import { useAccountMenuToggle } from '../hook'
+import useAccountMenuToggle from '../hook/useAccountMenuToggle'
 
 const AccountPopover = () => {
   const [handleOpen, handleClose, open] = useAccountMenuToggle(null)

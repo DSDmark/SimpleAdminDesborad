@@ -15,19 +15,20 @@ import account from '@/contants/account'
 import logo from '@/contants/logo'
 
 // styles
-import { NAV_WIDTH, StyledAccount } from '../style'
+import { StyledAccount } from './style'
+import { NAV_WIDTH } from '@/style'
 
 // ui
 import { RouterLink } from '@/components'
 
 // global hooks
 import useResponsiveQuery from '@/hooks/useResponsive'
-import NavSection from './nav-section'
+import { NavLink } from './components/'
 
 // data
-import navConfig from '../data'
+import navConfig from './data/navData'
 
-const NavDrawerComponent = () => {
+const SiderNav = () => {
   const isDesktop: boolean = useResponsiveQuery('up', 'lg')
   const DrawerContent = (
     <Box>
@@ -55,7 +56,7 @@ const NavDrawerComponent = () => {
         </Link>
       </Box>
 
-      <NavSection data={navConfig} />
+      <NavLink data={navConfig} />
 
       <Box sx={{ flexGrow: 1 }} />
 
@@ -114,4 +115,4 @@ const NavDrawerComponent = () => {
   )
 }
 
-export default NavDrawerComponent
+export default SiderNav

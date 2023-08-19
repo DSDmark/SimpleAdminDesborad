@@ -10,8 +10,8 @@ import { SvgIcon } from '@mui/material'
 
 const navConfig = [
   {
-    title: 'dashboard',
-    path: '/dashboard',
+    title: 'dasboard',
+    path: '/dasboard',
     icon: (
       <SvgIcon>
         <Dashboard />
@@ -20,7 +20,7 @@ const navConfig = [
   },
   {
     title: 'user',
-    path: '/dashboard/user',
+    path: '/dasboard/user',
     icon: (
       <SvgIcon>
         <Person />
@@ -29,7 +29,7 @@ const navConfig = [
   },
   {
     title: 'product',
-    path: '/dashboard/products',
+    path: '/dasboard/products',
     icon: (
       <SvgIcon>
         <ProductionQuantityLimitsSharp />

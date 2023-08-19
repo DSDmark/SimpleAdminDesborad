@@ -15,6 +15,7 @@
     "@mui/icons-material": "^5.14.1",
     "@mui/material": "^5.14.1",
     "@reduxjs/toolkit": "^1.9.5",
+    "nprogress": "^0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.1.1",
@@ -23,6 +24,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.4.4",
+    "@types/nprogress": "^0.2.0",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@types/react-router-dom": "^5.3.3",
