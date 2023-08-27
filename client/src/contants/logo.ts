@@ -1,7 +1,7 @@
 const logo = {
   name: 'SimpleAdminDasboard',
-  href: '/dashboard',
-  src: 'DSDmark3294@gmail.com',
+  href: '/dasboard',
+  src: '/public/Logo.png',
 }
 
 export default logo

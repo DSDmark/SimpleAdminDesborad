@@ -1,5 +1,5 @@
 // layout
-export { Header, Footer,SiderNav } from './layout/'
+export { Header, Footer, SiderNav } from './layout/'
 
 // ui
-export { RouterLink } from './ui'
+export { RouterLink, Logo } from './ui'

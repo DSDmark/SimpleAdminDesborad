@@ -4,7 +4,7 @@ import { Menu } from '@mui/icons-material'
 
 // style
 import { AppBarStyle, ToolbarStyle } from './style'
-import { AccountPopover } from './components'
+import { AccountPopover, Modes } from './components'
 
 const Header = () => {
   return (
@@ -14,8 +14,9 @@ const Header = () => {
           <Menu />
         </IconButton>
         <Box sx={{ flexGrow: 1 }} />
-        <Stack>
+        <Stack direction='row-reverse' gap={2}>
           <AccountPopover />
+          <Modes />
         </Stack>
       </ToolbarStyle>
     </AppBarStyle>

@@ -1,0 +1,25 @@
+// route
+import { Outlet } from 'react-router-dom'
+
+// styles
+import { HeaderStyle } from './style'
+
+// compnonets
+import { Logo } from '@/components/ui'
+import { AccountPopover } from '@/components/layout/header/components'
+import { Box } from '@mui/material'
+
+const MinimalLayout = () => {
+  return (
+    <>
+      <HeaderStyle>
+        <Logo />
+        <Box flexGrow={1} />
+        <AccountPopover />
+      </HeaderStyle>
+      <Outlet />
+    </>
+  )
+}
+
+export default MinimalLayout
