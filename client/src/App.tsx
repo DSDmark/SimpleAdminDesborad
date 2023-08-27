@@ -1,14 +1,20 @@
-// providers
-import ThemeProvider from './theme'
-
 // routers
 import RoutesLayout from './routes/'
 
+// providers
+import ThemeProvider from './theme'
+import { Provider } from 'react-redux'
+
+// redux store
+import { store } from './states/'
+
 const App = () => {
   return (
-    <ThemeProvider preferredTheme={'dark'}>
-      <RoutesLayout />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider>
+        <RoutesLayout />
+      </ThemeProvider>
+    </Provider>
   )
 }
 

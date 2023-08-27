@@ -15,7 +15,10 @@ import createPalette from './base/palette'
 import { IThemeProvider } from './types'
 import shadows from './base/shadows'
 
-const ThemeProvider = ({ children, preferredTheme }: IThemeProvider) => {
+const ThemeProvider = ({
+  children,
+  preferredTheme = 'dark',
+}: IThemeProvider) => {
   const refTheme = createPalette(preferredTheme)
   const { palette } = refTheme
   const customShadows = useMemo(() => shadows(refTheme), [refTheme])

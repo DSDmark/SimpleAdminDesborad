@@ -65,4 +65,11 @@ const navConfig = [
   },
 ]
 
+export const codeInfo = {
+  title: 'get more template?',
+  subtitle: 'get source code',
+  img: '/public/assets/images/avatars/avatar_default.jpg',
+  href: 'http://github.com/DSDmark',
+}
+
 export default navConfig

@@ -16,9 +16,10 @@ import account from '@/contants/account'
 // hook
 import useAccountMenuToggle from '../hook/useAccountMenuToggle'
 
+const MEMU_OPTION = ['Home', 'loggout', 'login']
+
 const AccountPopover = () => {
   const [handleOpen, handleClose, open] = useAccountMenuToggle(null)
-  const MEMU_OPTION = ['Home', 'loggout', 'login']
   return (
     <>
       <IconButton

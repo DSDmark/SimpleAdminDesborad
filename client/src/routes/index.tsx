@@ -11,6 +11,7 @@ import 'nprogress/nprogress.css' // Import nprogress styles
 // hooks
 import { useNProgress, useSrcollTop } from '@/hooks'
 import DasboardLayout from '@/layout/dasboard'
+import MinimalLayout from '@/layout/minimal'
 
 const RoutesLayout = () => {
   const ScrollTop = () => useSrcollTop()
@@ -36,7 +37,14 @@ const RoutesLayout = () => {
         path: '/register',
         element: <Register />,
       },
-      { path: '*', element: <NotFound /> },
+      {
+        element: <MinimalLayout />,
+        children: [
+          { element: <Navigate to='/dashboard/app' />, index: true },
+          { path: '404', element: <NotFound /> },
+          { path: '*', element: <Navigate to='/404' /> },
+        ],
+      },
     ])
 
   return (

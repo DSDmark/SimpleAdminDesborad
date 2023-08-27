@@ -14,6 +14,9 @@ import {
 import account from '@/contants/account'
 import logo from '@/contants/logo'
 
+// data
+import navConfig, { codeInfo } from './data/navData'
+
 // styles
 import { StyledAccount } from './style'
 import { NAV_WIDTH } from '@/style'
@@ -25,8 +28,8 @@ import { RouterLink } from '@/components'
 import useResponsiveQuery from '@/hooks/useResponsive'
 import { NavLink } from './components/'
 
-// data
-import navConfig from './data/navData'
+// ui
+import Logo from '@/components/ui/logo'
 
 const SiderNav = () => {
   const isDesktop: boolean = useResponsiveQuery('up', 'lg')
@@ -36,7 +39,7 @@ const SiderNav = () => {
         component={RouterLink}
         to={logo.href}
         sx={{ px: 2.5, py: 3, display: 'inline-flex' }}>
-        {logo.name}
+        <Logo />
       </Box>
       <Box sx={{ mb: 5, mx: 2.5 }}>
         <Link underline='none'>
@@ -58,7 +61,7 @@ const SiderNav = () => {
 
       <NavLink data={navConfig} />
 
-      <Box sx={{ flexGrow: 1 }} />
+      <Box display='flex' m='100%' />
 
       <Box sx={{ px: 2.5, pb: 3, mt: '100%' }}>
         <Stack
@@ -67,20 +70,20 @@ const SiderNav = () => {
           sx={{ pt: 5, borderRadius: 2, position: 'relative' }}>
           <Box
             component='img'
-            src='/assets/illustrations/illustration_avatar.png'
+            src={codeInfo.img}
             sx={{ width: 100, position: 'absolute', top: -50 }}
           />
 
           <Box sx={{ textAlign: 'center' }}>
             <Typography gutterBottom variant='h6'>
-              Get more?
+              {codeInfo.title}
             </Typography>
 
             <Typography variant='body2' sx={{ color: 'text.secondary' }}>
-              get source code
+              {codeInfo.subtitle}
             </Typography>
           </Box>
-          <Button href='#' target='_blank' variant='contained'>
+          <Button href={codeInfo.href} target='_blank' variant='contained'>
             go to github
           </Button>
         </Stack>
