@@ -6,7 +6,7 @@ import { HeaderStyle } from './style'
 
 // compnonets
 import { Logo } from '@/components/ui'
-import { AccountPopover } from '@/components/layout/header/components'
+import { AccountPopover, Modes } from '@/components/layout/header/components'
 import { Box } from '@mui/material'
 
 const MinimalLayout = () => {
@@ -16,6 +16,7 @@ const MinimalLayout = () => {
         <Logo />
         <Box flexGrow={1} />
         <AccountPopover />
+        <Modes />
       </HeaderStyle>
       <Outlet />
     </>

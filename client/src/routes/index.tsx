@@ -2,6 +2,9 @@
 import { BrowserRouter, Navigate, useRoutes } from 'react-router-dom'
 import NotFound from './LazyRoute'
 
+// theme
+import ThemeProvider from '@/theme'
+
 // pages
 import { DetailPenal, Login, Register } from '@/pages'
 
@@ -13,9 +16,16 @@ import { useNProgress, useSrcollTop } from '@/hooks'
 import DasboardLayout from '@/layout/dasboard'
 import MinimalLayout from '@/layout/minimal'
 
+// redux
+import { useSelector } from 'react-redux'
+import { RootState } from '@/states'
+
 const RoutesLayout = () => {
   const ScrollTop = () => useSrcollTop()
   const SlimProgressBar = () => useNProgress()
+  const preferredTheme = useSelector(
+    (state: RootState) => state.modes.preferredTheme,
+  )
 
   const Routes = () =>
     useRoutes([
@@ -48,11 +58,13 @@ const RoutesLayout = () => {
     ])
 
   return (
-    <BrowserRouter>
-      <ScrollTop />
-      <SlimProgressBar />
-      <Routes />
-    </BrowserRouter>
+    <ThemeProvider preferredTheme={preferredTheme}>
+      <BrowserRouter>
+        <ScrollTop />
+        <SlimProgressBar />
+        <Routes />
+      </BrowserRouter>
+    </ThemeProvider>
   )
 }
 
