@@ -6,11 +6,14 @@ import { Menu } from '@mui/icons-material'
 import { AppBarStyle, ToolbarStyle } from './style'
 import { AccountPopover, Modes } from './components'
 
-const Header = () => {
+// types
+import { Props } from './type'
+
+const Header = ({ onOpen }: Props) => {
   return (
     <AppBarStyle>
       <ToolbarStyle>
-        <IconButton sx={{ mr: 1, color: 'text.primary' }}>
+        <IconButton sx={{ mr: 1, color: 'text.primary' }} onClick={onOpen}>
           <Menu />
         </IconButton>
         <Box sx={{ flexGrow: 1 }} />

@@ -15,11 +15,13 @@ import account from '@/contants/account'
 
 // hook
 import useAccountMenuToggle from '../hook/useAccountMenuToggle'
+import { uuid } from '@/utils'
 
 const MEMU_OPTION = ['Home', 'loggout', 'login']
 
 const AccountPopover = () => {
   const [handleOpen, handleClose, open] = useAccountMenuToggle(null)
+  const id = uuid()
   return (
     <>
       <IconButton
@@ -41,7 +43,9 @@ const AccountPopover = () => {
 
         <Stack p={1}>
           {MEMU_OPTION.map(option => (
-            <MenuItem onClick={handleClose}>{option}</MenuItem>
+            <MenuItem key={id} onClick={handleClose}>
+              {option}
+            </MenuItem>
           ))}
         </Stack>
         <Divider sx={{ borderStyle: 'dashed' }} />
