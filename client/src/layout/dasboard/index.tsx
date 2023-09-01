@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 // components
 import { SiderNav, Header } from '@/components'
 
@@ -8,10 +10,12 @@ import { Outlet } from 'react-router-dom'
 import { DivStyle, MainStyle } from './style'
 
 export default function DasboardLayout() {
+  const [open, setOpen] = useState<boolean>(false)
+
   return (
     <DivStyle>
-      <Header />
-      <SiderNav />
+      <Header open={() => setOpen(prev => !prev)} />
+      <SiderNav onOpen={open} onClose={setOpen} />
       <MainStyle>
         <Outlet />
       </MainStyle>

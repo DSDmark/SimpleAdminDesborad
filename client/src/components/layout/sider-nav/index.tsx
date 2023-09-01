@@ -34,7 +34,7 @@ import Logo from '@/components/ui/logo'
 const SiderNav = () => {
   const isDesktop: boolean = useResponsiveQuery('up', 'lg')
   const DrawerContent = (
-    <Box>
+    <Box textAlign='center'>
       <Box
         component={RouterLink}
         to={logo.href}
