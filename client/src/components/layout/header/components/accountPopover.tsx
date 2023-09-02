@@ -21,7 +21,7 @@ const MEMU_OPTION = ['Home', 'loggout', 'login']
 
 const AccountPopover = () => {
   const [handleOpen, handleClose, open] = useAccountMenuToggle(null)
-  const id = uuid()
+
   return (
     <>
       <IconButton
@@ -43,7 +43,7 @@ const AccountPopover = () => {
 
         <Stack p={1}>
           {MEMU_OPTION.map(option => (
-            <MenuItem key={id} onClick={handleClose}>
+            <MenuItem key={uuid()} onClick={handleClose}>
               {option}
             </MenuItem>
           ))}

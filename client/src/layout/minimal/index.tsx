@@ -15,7 +15,6 @@ const MinimalLayout = () => {
       <HeaderStyle>
         <Logo />
         <Box flexGrow={1} />
-        <AccountPopover />
         <Modes />
       </HeaderStyle>
       <Outlet />

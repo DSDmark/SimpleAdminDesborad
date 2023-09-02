@@ -11,3 +11,7 @@ export interface INavDataProps {
   data: INavData[]
   other?: BoxProps
 }
+
+export interface INavToggleProps {
+  open: boolean
+}

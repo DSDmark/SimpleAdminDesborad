@@ -1,4 +1,5 @@
 // @mui
+import { HEADER_DESKTOP, HEADER_MOBILE } from '@/style'
 import { styled } from '@mui/material'
 
 export const HeaderStyle = styled('header')(({ theme }) => ({
@@ -6,12 +7,12 @@ export const HeaderStyle = styled('header')(({ theme }) => ({
   left: 0,
   lineHeight: 0,
   width: '100%',
-  background: theme.palette.primary.light,
   display: 'flex',
-  justifyContent: 'center',
+  justifyContent: 'space-between',
   alignItems: 'center',
   position: 'absolute',
-  padding: theme.spacing(10, 0, 0),
+  gap: '2rem',
+  padding: theme.spacing(3, 3, 0),
   [theme.breakpoints.up('sm')]: {
     padding: theme.spacing(5, 5, 0),
   },

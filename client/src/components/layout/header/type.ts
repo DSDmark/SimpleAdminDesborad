@@ -6,5 +6,5 @@ export type HandleClose = () => void
 export type OpenState = HTMLButtonElement | null
 
 export interface Props {
-  onOpen: boolean
+  onToggle: () => void
 }

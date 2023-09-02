@@ -14,8 +14,8 @@ export default function DasboardLayout() {
 
   return (
     <DivStyle>
-      <Header open={() => setOpen(prev => !prev)} />
-      <SiderNav onOpen={open} onClose={setOpen} />
+      <Header onToggle={() => setOpen(prev => !prev)} />
+      <SiderNav open={open} onClose={() => setOpen(false)} />
       <MainStyle>
         <Outlet />
       </MainStyle>
