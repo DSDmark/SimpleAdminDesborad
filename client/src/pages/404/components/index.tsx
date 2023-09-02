@@ -26,7 +26,7 @@ const NotFountPage = () => {
           component='img'
           src='/assets/illustrations/illustration_404.svg'
           sx={{
-            height: 360,
+            height: 250,
             mx: 'auto',
             my: { xs: 5, sm: 10 },
           }}

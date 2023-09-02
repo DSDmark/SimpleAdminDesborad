@@ -31,7 +31,10 @@ import { NavLink } from './components/'
 // ui
 import Logo from '@/components/ui/logo'
 
-const SiderNav = () => {
+// types
+import { INavToggleProps } from './type'
+
+const SiderNav = ({ open, onClose }: INavToggleProps) => {
   const isDesktop: boolean = useResponsiveQuery('up', 'lg')
   const DrawerContent = (
     <Box textAlign='center'>
@@ -106,9 +109,8 @@ const SiderNav = () => {
     ...(isDesktop
       ? {
           variant: 'permanent',
-          open: true,
         }
-      : {}),
+      : { open: open, onClose }),
   }
 
   return (

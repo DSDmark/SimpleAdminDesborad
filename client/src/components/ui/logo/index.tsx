@@ -10,7 +10,7 @@ import logoData from '@/contants/logo'
 const Logo = () => {
   return (
     <Box component={RouterLink} to={logoData.href}>
-      <img width='auto' height={100} src={logoData.src} alt={logoData.name} />
+      <img width='auto' height={80} src={logoData.src} alt={logoData.name} />
     </Box>
   )
 }
